@@ -13,5 +13,10 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 //====================================
 // Base de datos
 //====================================
-urlBD = 'mongodb://root:CtUKrhE2ZiZq@35.238.157.141:27017/cafe?authSource=admin';
+if (process.env.NODE_ENV === 'dev') {
+    urlBD = 'mongodb://localhost:27017/cafe?authSource=admin';
+} else {
+    urlBD = process.env.MONGO_URI;
+}
+
 process.env.URLBD = urlBD;
