@@ -16,7 +16,7 @@ app.use(require('./routes/usuario'));
 
 
 
-mongoose.connect('mongodb://root:CtUKrhE2ZiZq@35.238.157.141:27017/cafe?authSource=admin', (err, res) => {
+mongoose.connect(process.env.URLBD, (err, res) => {
 
     if (err) throw err;
 
