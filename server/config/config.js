@@ -12,7 +12,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 //====================================
 // Vencimiento del token
 //====================================
-process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+//process.env.CADUCIDAD_TOKEN = 60 * 60 * 24 * 30;
+process.env.CADUCIDAD_TOKEN = '48h';
 
 
 //====================================
@@ -24,7 +25,7 @@ process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
 // Base de datos
 //====================================
 if (process.env.NODE_ENV === 'dev') {
-    urlBD = 'authSource=admin';
+    urlBD = 'mongodb://root:CtUKrhE2ZiZq@35.238.157.141:27017/cafe?authSource=admin';
 } else {
     urlBD = process.env.MONGO_URI;
 }
